@@ -192,7 +192,7 @@ TW_INCLUDE_FB2PNG := true
 TW_NO_SCREEN_TIMEOUT := true
 TW_NO_SCREEN_BLANK := true
 TW_INCLUDE_CRYPTO := true
-#TW_TARGET_USES_QCOM_BSP := true
+TW_TARGET_USES_QCOM_BSP := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
 
