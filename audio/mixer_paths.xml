@@ -35,8 +35,8 @@
     <ctl name="RX7 Digital Volume" value="84" />
     <ctl name="ADC1 Volume" value="19" />
     <ctl name="ADC2 Volume" value="19" />
-    <ctl name="ADC3 Volume" value="0" />
-    <ctl name="ADC4 Volume" value="0" />
+    <ctl name="ADC3 Volume" value="19" />
+    <ctl name="ADC4 Volume" value="19" />
     <ctl name="ADC5 Volume" value="19" />
     <ctl name="ADC6 Volume" value="19" />
     <ctl name="DEC1 Volume" value="84" />
@@ -171,11 +171,6 @@
     <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="0" />
     <ctl name="MultiMedia1 Mixer VOC_REC_DL" value="0" />
 
-    <!-- Incall Music -->
-    <ctl name="Incall_Music Audio Mixer MultiMedia2" value="0" />
-    <ctl name="Incall_Music_2 Audio Mixer MultiMedia9" value="0" />
-    <!-- Incall Music End -->
-
     <!-- VoLTE -->
     <ctl name="SLIM_0_RX_Voice Mixer VoLTE" value="0" />
     <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="0" />
@@ -212,9 +207,6 @@
     <ctl name="INTERNAL_BT_SCO_RX_Voice Mixer QCHAT" value="0" />
     <ctl name="QCHAT_Tx Mixer INTERNAL_BT_SCO_TX_QCHAT" value="0" />
     <!-- QCHAT End -->
-
-    <!-- EC_REF -->
-    <ctl name="AUDIO_REF_EC_UL1 MUX" value="None" />
 
     <!-- anc headset -->
     <!-- speaker anc combo -->
@@ -278,13 +270,6 @@
     <!-- audio record compress end-->
     <!-- listen -->
     <ctl name="LSM1 MUX" value="None" />
-    <ctl name="LSM2 MUX" value="None" />
-    <ctl name="LSM3 MUX" value="None" />
-    <ctl name="LSM4 MUX" value="None" />
-    <ctl name="LSM5 MUX" value="None" />
-    <ctl name="LSM6 MUX" value="None" />
-    <ctl name="LSM7 MUX" value="None" />
-    <ctl name="LSM8 MUX" value="None" />
     <ctl name="SLIMBUS_5_TX LSM Function" value="None" />
     <ctl name="MADONOFF Switch" value="0" />
     <ctl name="MAD Input" value="DMIC1" />
@@ -292,12 +277,6 @@
     <!-- afe-proxy -->
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="0" />
     <!-- afe-proxy end-->
-    <ctl name="AFE_PCM_RX Port Mixer INTERNAL_FM_TX" value="0" />
-
-    <!-- BT SCO WB Sample Rate -->
-    <path name="bt-sco-wb-samplerate">
-        <ctl name="Internal BTSCO SampleRate" value="16000" />
-    </path>
 
     <!-- These are audio route (FE to BE) specific mixer settings -->
     <path name="deep-buffer-playback">
@@ -523,12 +502,6 @@
         <ctl name="SLIMBUS_DL_HL Switch" value="1" />
     </path>
 
-    <path name="play-fm usb-headphones">
-        <ctl name="Internal FM RX Volume" value="1" />
-        <ctl name="AFE_PCM_RX Port Mixer INTERNAL_FM_TX" value="1" />
-        <ctl name="SLIMBUS_DL_HL Switch" value="1" />
-    </path>
-
     <path name="incall-rec-uplink">
         <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="1" />
     </path>
@@ -638,47 +611,6 @@
         <path name="incall-rec-uplink-and-downlink-compress" />
     </path>
 
-    <path name="incall_music_uplink">
-        <ctl name="Incall_Music Audio Mixer MultiMedia2" value="1" />
-    </path>
-
-    <path name="incall_music_uplink bt-sco">
-        <path name="incall_music_uplink" />
-    </path>
-
-    <path name="incall_music_uplink bt-sco-wb">
-        <path name="incall_music_uplink" />
-    </path>
-
-    <path name="incall_music_uplink usb-headphones">
-        <path name="incall_music_uplink" />
-    </path>
-
-    <path name="incall_music_uplink hdmi">
-        <path name="incall_music_uplink" />
-    </path>
-
-
-    <path name="incall_music_uplink2">
-        <ctl name="Incall_Music_2 Audio Mixer MultiMedia9" value="1" />
-    </path>
-
-    <path name="incall_music_uplink2 bt-sco">
-        <path name="incall_music_uplink2" />
-    </path>
-
-    <path name="incall_music_uplink2 bt-sco-wb">
-        <path name="incall_music_uplink2" />
-    </path>
-
-    <path name="incall_music_uplink2 usb-headphones">
-        <path name="incall_music_uplink2" />
-    </path>
-
-    <path name="incall_music_uplink2 hdmi">
-        <path name="incall_music_uplink2" />
-    </path>
-
     <path name="volte-call">
         <ctl name="SLIM_0_RX_Voice Mixer VoLTE" value="1" />
         <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="1" />
@@ -732,37 +664,8 @@
         <ctl name="SLIM0_RX_VI_FB_LCH_MUX"  value="SLIM4_TX" />
     </path>
 
-    <path name="listen-voice-wakeup-1">
+    <path name="listen-low-power">
         <ctl name="LSM1 MUX" value="SLIMBUS_5_TX" />
-        <ctl name="SLIMBUS_5_TX LSM Function" value="AUDIO" />
-    </path>
-
-    <path name="listen-voice-wakeup-2">
-        <ctl name="LSM2 MUX" value="SLIMBUS_5_TX" />
-        <ctl name="SLIMBUS_5_TX LSM Function" value="AUDIO" />
-    </path>
-    <path name="listen-voice-wakeup-3">
-        <ctl name="LSM3 MUX" value="SLIMBUS_5_TX" />
-        <ctl name="SLIMBUS_5_TX LSM Function" value="AUDIO" />
-    </path>
-    <path name="listen-voice-wakeup-4">
-        <ctl name="LSM4 MUX" value="SLIMBUS_5_TX" />
-        <ctl name="SLIMBUS_5_TX LSM Function" value="AUDIO" />
-    </path>
-    <path name="listen-voice-wakeup-5">
-        <ctl name="LSM5 MUX" value="SLIMBUS_5_TX" />
-        <ctl name="SLIMBUS_5_TX LSM Function" value="AUDIO" />
-    </path>
-    <path name="listen-voice-wakeup-6">
-        <ctl name="LSM6 MUX" value="SLIMBUS_5_TX" />
-        <ctl name="SLIMBUS_5_TX LSM Function" value="AUDIO" />
-    </path>
-    <path name="listen-voice-wakeup-7">
-        <ctl name="LSM7 MUX" value="SLIMBUS_5_TX" />
-        <ctl name="SLIMBUS_5_TX LSM Function" value="AUDIO" />
-    </path>
-    <path name="listen-voice-wakeup-8">
-        <ctl name="LSM8 MUX" value="SLIMBUS_5_TX" />
         <ctl name="SLIMBUS_5_TX LSM Function" value="AUDIO" />
     </path>
 
@@ -787,9 +690,9 @@
         <ctl name="SLIM_0_TX Channels" value="One" />
         <ctl name="SLIM TX7 MUX" value="DEC6" />
         <ctl name="DEC6 MUX" value="ADC1" />
-    <!-- Gionee Huangzhuolin 20140528 @ modify for CR01270447 Begin -->
+    <!-- Gionee Huangzhuolin 20140923 @ modify for CR01386607 Begin -->
     <!-- <ctl name="IIR1 INP1 MUX" value="DEC6" /> -->
-    <!-- Gionee Huangzhuolin 20140528 @ modify for CR01270447 End -->
+    <!-- Gionee Huangzhuolin 20140923 @ modify for CR01386607 End -->
     </path>
 
     <path name="adc2">
@@ -797,9 +700,9 @@
         <ctl name="SLIM_0_TX Channels" value="One" />
         <ctl name="SLIM TX7 MUX" value="DEC5" />
         <ctl name="DEC5 MUX" value="ADC2" />
-    <!-- Gionee Huangzhuolin 20140528 @ modify for CR01270447 Begin -->
+    <!-- Gionee Huangzhuolin 20140923 @ modify for CR01386607 Begin -->
     <!-- <ctl name="IIR1 INP1 MUX" value="DEC5" /> -->
-    <!-- Gionee Huangzhuolin 20140528 @ modify for CR01270447 End -->
+    <!-- Gionee Huangzhuolin 20140923 @ modify for CR01386607 End -->
     </path>
 
     <path name="dmic1">
@@ -807,36 +710,54 @@
         <ctl name="SLIM_0_TX Channels" value="One" />
         <ctl name="SLIM TX7 MUX" value="DEC7" />
         <ctl name="DEC7 MUX" value="DMIC1" />
-    <!-- Gionee Huangzhuolin 20140528 @ modify for CR01270447 Begin -->
+    <!-- Gionee Huangzhuolin 20140923 @ modify for CR01386607 Begin -->
     <!-- <ctl name="IIR1 INP1 MUX" value="DEC7" /> -->
-    <!-- Gionee Huangzhuolin 20140528 @ modify for CR01270447 End -->
+    <!-- Gionee Huangzhuolin 20140923 @ modify for CR01386607 End -->
     </path>
-	
-    <!-- Gionee Huangzhuolin 20140504 @ add for mmi test CR01236873 Begin -->
-    <path name="mmi-test-dmic1">
+
+    <!-- Gionee Huangzhuolin 20140815 @ add for CR01358136 Begin -->
+    <path name="mmimic-test-amic1">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1"/>
         <ctl name="SLIM_0_TX Channels" value="One" />
-        <ctl name="SLIM TX7 MUX" value="DEC7" />
-        <ctl name="DEC7 MUX" value="DMIC1" />
-		<ctl name="DEC7 Volume" value="65" />
+        <ctl name="SLIM TX7 MUX" value="DEC6" />
+        <ctl name="DEC6 MUX" value="ADC1" />
+        <ctl name="ADC1 Volume" value="5" />
     </path>
 	
-    <path name="mmi-test-dmic2">
+    <path name="mmimic-test-amic2">
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1"/>
         <ctl name="SLIM_0_TX Channels" value="One" />
-        <ctl name="SLIM TX8 MUX" value="DEC10" />
-        <ctl name="DEC10 MUX" value="DMIC3" />
-		<ctl name="DEC10 Volume" value="48" />
+        <ctl name="SLIM TX8 MUX" value="DEC2" />
+        <ctl name="DEC2 MUX" value="ADC5" />
+        <ctl name="ADC5 Volume" value="4" />
     </path>
-	
-    <path name="mmi-test-dmic3">
+
+    <path name="mmimic-test-amic3">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1"/>
         <ctl name="SLIM_0_TX Channels" value="One" />
-        <ctl name="SLIM TX7 MUX" value="DEC5" />
-        <ctl name="DEC5 MUX" value="DMIC5" />
-		<ctl name="DEC5 Volume" value="48" />
+        <ctl name="SLIM TX7 MUX" value="DEC1" />
+        <ctl name="DEC1 MUX" value="ADC6" />
+        <ctl name="ADC6 Volume" value="10" />
     </path>
 	
+    <!-- Gionee Huangzhuolin 20140920 @ add for CR01361120 Begin -->
+    <path name="amic1">
+        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="SLIM TX7 MUX" value="DEC6" />
+        <ctl name="DEC6 MUX" value="ADC1" />
+        <ctl name="ADC1 Volume" value="10" />
+    </path>
+	
+    <path name="amic2">
+        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="SLIM TX8 MUX" value="DEC2" />
+        <ctl name="DEC2 MUX" value="ADC5" />
+        <ctl name="ADC5 Volume" value="10" />
+    </path>
+    <!-- Gionee Huangzhuolin 20140920 @ add for CR01361120 End -->
+    
     <path name="mmi-test-handset">
         <ctl name="SLIM RX1 MUX" value="AIF1_PB"/>
         <ctl name="SLIM_0_RX Channels" value="One" />
@@ -852,7 +773,7 @@
         <ctl name="RX1 Digital Volume" value="90" />
         <ctl name="DAC1 Switch" value="1" />
     </path>
-	
+		
     <path name="mmi-test-handset-and-headphone">
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
         <ctl name="SLIM RX2 MUX" value="AIF1_PB" />
@@ -872,16 +793,18 @@
         <ctl name="HPHL DAC Switch" value="1" />
         <ctl name="COMP1 Switch" value="1" />
     </path>
-    <!-- Gionee Huangzhuolin 20140504 @ add for mmi test CR01236873 End -->
+    <!-- Gionee Huangzhuolin 20140815 @ add for CR01358136 End -->
 
-    <!-- Gionee Huangzhuolin 20140418 @ modify for speaker control CR01201334 Begin -->
+    <!-- Gionee Huangzhuolin 20140815 @ add for CR01358136 Begin -->
     <path name="speaker">
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="SLIM_0_RX Channels" value="One" />
         <ctl name="RDAC5 MUX" value="DEM3_INV" />
+        <ctl name="LINEOUT1 Volume" value="20" />
+        <ctl name="LINEOUT3 Volume" value="20" />
     </path>
-    <!-- Gionee Huangzhuolin 20140418 @ modify for speaker control CR01201334 End -->
+    <!-- Gionee Huangzhuolin 20140815 @ add for CR01358136 End -->
 
     <path name="speaker-fluid">
         <ctl name="SLIM RX1 MUX" value="AIF1_PB" />
@@ -934,12 +857,9 @@
     </path>
 
     <path name="speaker-mic">
-    <!-- Gionee Huangzhuolin 20140828 @ modify for speaker mic CR01371317 Begin -->
-        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1"/>
-        <ctl name="SLIM_0_TX Channels" value="One" />
-        <ctl name="SLIM TX8 MUX" value="DEC10" />
-        <ctl name="DEC10 MUX" value="DMIC3" />
-    <!-- Gionee Huangzhuolin 20140828 @ modify for speaker mic CR01371317 End -->
+    <!-- Gionee Huangzhuolin 20140920 @ add for CR01361120 Begin -->
+        <path name="amic2" />
+    <!-- Gionee Huangzhuolin 20140920 @ add for CR01361120 End -->
     </path>
 
     <path name="speaker-mic-liquid">
@@ -952,7 +872,7 @@
         <ctl name="SLIM_0_TX Channels" value="One" />
         <ctl name="SLIM TX7 MUX" value="DEC6" />
         <ctl name="DEC6 MUX" value="ADC1" />
-        <ctl name="ADC1 Volume" value="124" />
+        <ctl name="ADC1 Volume" value="15" />
         <ctl name="IIR1 INP1 MUX" value="DEC7" />
     </path>
 
@@ -975,7 +895,7 @@
     </path>
 
     <path name="handset-mic">
-        <path name="dmic1" />
+        <path name="amic1" />
     </path>
 
     <path name="anc-handset">
@@ -1035,6 +955,9 @@
     </path>
 
     <path name="voice-headphones">
+    <!-- Gionee Huangzhuolin 20140923 @ modify for CR01386607 Begin -->
+        <!--<path name="sidetone-headphones" />-->
+    <!-- Gionee Huangzhuolin 20140923 @ modify for CR01386607 End -->
         <path name="headphones" />
     </path>
 
@@ -1049,6 +972,12 @@
         <path name="headphones" />
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="RDAC5 MUX" value="DEM3_INV" />
+    <!-- Gionee Huangzhuolin 20141110 @ modify for CR01407954 Begin -->
+		<ctl name="RX1 Digital Volume" value="70" />
+		<ctl name="RX2 Digital Volume" value="70" />
+        <ctl name="LINEOUT1 Volume" value="20" />
+        <ctl name="LINEOUT3 Volume" value="20" />
+    <!-- Gionee Huangzhuolin 20141110 @ modify for CR01407954 End -->
     </path>
     <!-- Gionee Huangzhuolin 20140418 @ modify for speaker-and-headphones control CR01201334 End -->
 
@@ -1105,8 +1034,8 @@
         <ctl name="ANC1 FB MUX" value="EAR_HPH_L" />
         <ctl name="ANC1 MUX" value="ADC3" />
         <ctl name="ANC2 MUX" value="ADC4" />
-        <ctl name="ADC3 Volume" value="8" />
-        <ctl name="ADC4 Volume" value="8" />
+        <ctl name="ADC3 Volume" value="14" />
+        <ctl name="ADC4 Volume" value="14" />
     </path>
 
     <path name="speaker-and-anc-headphones">
@@ -1134,8 +1063,8 @@
         <ctl name="ANC1 FB MUX" value="EAR_HPH_L" />
         <ctl name="ANC1 MUX" value="ADC3" />
         <ctl name="ANC2 MUX" value="ADC4" />
-        <ctl name="ADC3 Volume" value="8" />
-        <ctl name="ADC4 Volume" value="8" />
+        <ctl name="ADC3 Volume" value="14" />
+        <ctl name="ADC4 Volume" value="14" />
     </path>
 
     <path name="voice-anc-headphones">
@@ -1163,8 +1092,8 @@
         <ctl name="ANC1 FB MUX" value="EAR_HPH_L" />
         <ctl name="ANC1 MUX" value="ADC3" />
         <ctl name="ANC2 MUX" value="ADC4" />
-        <ctl name="ADC3 Volume" value="8" />
-        <ctl name="ADC4 Volume" value="8" />
+        <ctl name="ADC3 Volume" value="14" />
+        <ctl name="ADC4 Volume" value="14" />
     </path>
 
     <path name="speaker-and-anc-headphones-fluid">
@@ -1254,32 +1183,7 @@
     </path>
 
     <!-- Dual MIC devices -->
-    <!-- Gionee Huangzhuolin 20140710 @ modify for CR01320319 Begin -->
     <path name="speaker-dmic-endfire">
-        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
-        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
-        <ctl name="SLIM TX7 MUX" value="DEC10" />
-        <ctl name="DEC10 MUX" value="DMIC3" />
-        <ctl name="SLIM TX8 MUX" value="DEC9" />
-        <ctl name="DEC9 MUX" value="DMIC5" />
-        <ctl name="SLIM_0_TX Channels" value="Two" />
-    </path>
-    <!-- Gionee Huangzhuolin 20140710 @ modify for CR01320319 End -->
-	
-    <!-- Gionee Huangzhuolin 20140710 @ add for CR01320319 Begin -->
-    <path name="handset-dmic-endfire">
-        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
-        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
-        <ctl name="SLIM TX7 MUX" value="DEC7" />
-        <ctl name="DEC7 MUX" value="DMIC1" />
-        <ctl name="SLIM TX8 MUX" value="DEC9" />
-        <ctl name="DEC9 MUX" value="DMIC5" />
-        <ctl name="SLIM_0_TX Channels" value="Two" />
-    </path>
-    <!-- Gionee Huangzhuolin 20140710 @ add for CR01320319 End -->
-
-    <!-- Gionee Huangzhuolin 20140716 @ add for CR01322997 Begin -->
-    <path name="handset-stereo-dmic-endfire">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
         <ctl name="SLIM TX7 MUX" value="DEC7" />
@@ -1288,7 +1192,6 @@
         <ctl name="DEC10 MUX" value="DMIC3" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
     </path>
-    <!-- Gionee Huangzhuolin 20140716 @ add for CR01322997 End -->
 
     <path name="speaker-dmic-endfire-liquid">
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
@@ -1298,10 +1201,6 @@
         <ctl name="SLIM TX8 MUX" value="DEC9" />
         <ctl name="DEC9 MUX" value="DMIC4" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
-    </path>
-
-    <path name="echo-reference">
-        <ctl name="AUDIO_REF_EC_UL1 MUX" value="SLIM_RX" />
     </path>
 
     <path name="dmic-endfire">
@@ -1315,9 +1214,7 @@
     </path>
 
     <path name="handset-stereo-dmic-ef">
-    <!-- Gionee Huangzhuolin 20140716 @ modify for CR01322997 Begin -->
-        <path name="handset-stereo-dmic-endfire" />
-    <!-- Gionee Huangzhuolin 20140716 @ modify for CR01322997 End -->
+        <path name="speaker-dmic-endfire" />
     </path>
 
     <path name="speaker-stereo-dmic-ef">
@@ -1329,15 +1226,11 @@
     </path>
 
     <path name="voice-dmic-ef">
-    <!-- Gionee Huangzhuolin 20140710 @ modify for CR01320319 Begin -->
-        <path name="handset-dmic-endfire" />
-    <!-- Gionee Huangzhuolin 20140710 @ modify for CR01320319 End -->
+        <path name="dmic-endfire" />
     </path>
 
     <path name="voice-speaker-dmic-ef">
-    <!-- Gionee Huangzhuolin 20140710 @ modify for CR01320319 Begin -->
-        <path name="speaker-dmic-endfire" />
-    <!-- Gionee Huangzhuolin 20140710 @ modify for CR01320319 End -->
+        <path name="dmic-endfire" />
     </path>
 
     <path name="voice-rec-dmic-ef">

@@ -14,5 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo omni_u3-userdebug
-add_lunch_combo omni_u3-eng
+add_lunch_combo lineage_u3-userdebug

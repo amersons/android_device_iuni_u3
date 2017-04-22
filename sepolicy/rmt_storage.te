@@ -1,8 +1,6 @@
-###########################
-# OmniROM Gionee common sepolicy
-#
+typeattribute rmt_storage rmt_placeholder;
 
+# Allow rmt_storage to backup/restore NV contents
+allow rmt_storage nvbackup_block_device:blk_file rw_file_perms;
 allow rmt_storage ssd_device:blk_file rw_file_perms;
-
-# Allow reads/writes to modem related block devices
-allow rmt_storage modem_block_device:blk_file rw_file_perms;
+allow rmt_storage kmem_device:chr_file rw_file_perms;

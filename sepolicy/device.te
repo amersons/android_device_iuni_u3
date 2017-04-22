@@ -1,5 +1,2 @@
-###########################
-# OmniROM u3 common sepolicy
-#
-
-type modem_block_device, dev_type;
+type nvbackup_block_device, dev_type;
+type drm_block_device, dev_type;

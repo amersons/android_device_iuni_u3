@@ -1,7 +1,12 @@
-###########################
-# OmniROM Gionee common sepolicy
-#
+# for CMHardwareService access to TapToWake
+allow system_server proc_touchpanel:file rw_file_perms;
+allow system_server proc_touchpanel:dir { search };
+allow system_server touchscreen_file:file rw_file_perms;
 
-allow system_server time_daemon:unix_stream_socket connectto;
-allow system_server apk_data_file:sock_file { read write getattr };
-allow system_server cache_file:file { execute };
+# examine battery state
+r_dir_file(system_server, sysfs_usb_supply);
+
+allow system_server sensors_persist_file:dir search;
+allow system_server sensors_persist_file:file read;
+allow system_server sensors_persist_file:file open;
+allow system_server sensors_persist_file:file getattr;
